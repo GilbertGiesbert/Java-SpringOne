@@ -1,11 +1,16 @@
 package com.joern.model;
 
-/**
- * Created by Geheim on 29.07.2016.
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user")
 public class User {
 
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+	@Column(name = "name", length = 500)
 	private String name;
 
     public long getId() {
