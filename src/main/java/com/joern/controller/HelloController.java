@@ -1,4 +1,4 @@
-package com.joern;
+package com.joern.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

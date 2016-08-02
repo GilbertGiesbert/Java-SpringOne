@@ -1,10 +1,10 @@
-package com.joern;
+package com.joern.dao;
+
+import com.joern.model.User;
 
 import java.util.List;
 
-/**
- * Created by Geheim on 29.07.2016.
- */
+
 public interface UserDao {
 
     public User create();

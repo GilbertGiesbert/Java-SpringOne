@@ -1,4 +1,4 @@
-package com.joern;
+package com.joern.model;
 
 /**
  * Created by Geheim on 29.07.2016.
@@ -6,6 +6,7 @@ package com.joern;
 public class User {
 
     private long id;
+	private String name;
 
     public long getId() {
         return id;
@@ -22,8 +23,4 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-
-    private String name;
-
-
 }

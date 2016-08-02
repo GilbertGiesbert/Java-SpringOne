@@ -1,4 +1,4 @@
-package com.joern;
+package com.joern.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
