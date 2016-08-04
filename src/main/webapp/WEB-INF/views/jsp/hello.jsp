@@ -12,5 +12,24 @@
 	Hello ${name}
 </c:if>
 
+<p>
+	<spring:message code="key.123"/>
+</p>
+<p>
+	<spring:message code="prompt.yes"/>
+	<spring:message code="prompt.no"/>
+</p>
+
+<p>
+
+	<c:set var="arg1"><spring:message code="prompt.dance"/></c:set>
+	<spring:message code="key.feeling" arguments="a,${arg1}"/>
+</p>
+<p>
+	<spring:message code="resource.prop.1"/>
+</p>
+
+
+
 </body>
 </html>
