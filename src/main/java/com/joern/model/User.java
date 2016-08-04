@@ -13,6 +13,14 @@ public class User {
 	@Column(name = "name", length = 500)
 	private String name;
 
+
+	// Required by Hibernate.
+	private User() {}
+
+	public static User newUser(){
+		return new User();
+	}
+
     public long getId() {
         return id;
     }

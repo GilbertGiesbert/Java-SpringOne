@@ -13,6 +13,12 @@
 </c:if>
 
 <p>
+	<c:if test="${not empty userId}">
+		id: ${userId}
+	</c:if>
+</p>
+
+<p>
 	<spring:message code="key.123"/>
 </p>
 <p>
