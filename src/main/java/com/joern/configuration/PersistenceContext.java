@@ -68,7 +68,7 @@ public class PersistenceContext {
 		//that is optimized for the used database.
 		jpaProperties.put(PROPERTY_NAME_HIBERNATE_DIALECT, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_DIALECT));
 
-		/*
+
 
 		//Specifies the action that is invoked to the database when the Hibernate
 		//SessionFactory is created or closed.
@@ -86,7 +86,7 @@ public class PersistenceContext {
 		//when it writes SQL to the console.
 		jpaProperties.put(PROPERTY_NAME_HIBERNATE_FORMAT_SQL, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_FORMAT_SQL));
 
-		*/
+
 
 		entityManagerFactoryBean.setJpaProperties(jpaProperties);
 

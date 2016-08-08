@@ -7,16 +7,36 @@
 </head>
 
 <h1>HelloSpringOne</h1>
- 
-<c:if test="${not empty name}">
-	Hello ${name}
-</c:if>
 
-<p>
-	<c:if test="${not empty userId}">
-		id: ${userId}
-	</c:if>
-</p>
+<c:set var="varName" value="${not empty name ? name : 'name not available'}"/>
+<c:set var="varMessage" value="${not empty message ? message : 'message not available'}"/>
+<c:set var="varUserId" value="${not empty userId ? userId : 'userId not available'}"/>
+
+<c:set var="varUserList">
+	<c:choose>
+		<c:when test="${not empty userList}">
+			<ul>
+				<c:forEach items="${userList}" var="user">
+					<li>${user.name}</li>
+				</c:forEach>
+			</ul>
+		</c:when>
+		<c:otherwise>
+			user list not available
+		</c:otherwise>
+	</c:choose>
+</c:set>
+
+
+<p>name: ${varName}</p>
+
+<p>message: ${varMessage}</p>
+
+<p>userId: ${varUserId}</p>
+
+<p>userList: ${varUserList}</p>
+
+
 
 <p>
 	<spring:message code="key.123"/>

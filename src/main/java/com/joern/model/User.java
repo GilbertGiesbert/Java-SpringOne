@@ -3,14 +3,15 @@ package com.joern.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id")
     private long id;
 
-	@Column(name = "name", length = 500)
+	@Column(name = "name")
 	private String name;
 
 

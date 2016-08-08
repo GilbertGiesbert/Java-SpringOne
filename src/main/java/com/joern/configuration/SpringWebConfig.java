@@ -53,14 +53,11 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
 	public MessageSource configureMessageSource() {
 		FallbackMessageSource messageSource = new FallbackMessageSource();
 
-		// classpath not working! why ??
-		// String propertiesBasePath = "classpath:WEB-INF/i18n/";
-		String propertiesBasePath = "/WEB-INF/i18n/";
 
 		messageSource.setBasenames(new String[]{
 				"classpath:i18n/srcMainRsrcProps",
-				propertiesBasePath+"messages",
-				propertiesBasePath+"subfolder/prompts"});
+				"/WEB-INF/i18n/messages",
+				"/WEB-INF/i18n/subfolder/prompts"});
 
 		messageSource.setCacheSeconds(5);
 		messageSource.setDefaultEncoding("UTF-8");

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 import java.util.Random;
 
 @Controller
@@ -22,9 +21,11 @@ public class HelloController {
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String printWelcome(ModelMap model) {
+    public String printWelcome(ModelMap modelMap) {
 
-        model.addAttribute("message", "Spring 3 MVC Hello World");
+	    modelMap.addAttribute("message", "Spring 3 MVC Hello World");
+	    modelMap.addAttribute("userList", userRepository.findAll());
+
         return "hello";
 
     }
@@ -34,12 +35,14 @@ public class HelloController {
 
 	    User newUser = User.newUser();
 
-	    String[]names = {"Klaus", "Peter","Müller","Hans","Meyer",};
-	    String randomName = names[new Random().nextInt(names.length)];
-	    newUser.setName(randomName);
+	    if(name == null){
+		    String[]names = {"Klaus", "Peter","Müller","Hans","Meyer",};
+		    name = names[new Random().nextInt(names.length)];
+	    }
 
+	    newUser.setName(name);
 	    newUser = userRepository.save(newUser);
-	    List userList = userRepository.findAll();
+
 
 
 
