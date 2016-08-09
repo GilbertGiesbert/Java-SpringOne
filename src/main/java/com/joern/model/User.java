@@ -3,7 +3,7 @@ package com.joern.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users") // Note! you can't use 'user' (without s) as table name in hibernate
 public class User {
 
 	@Id
