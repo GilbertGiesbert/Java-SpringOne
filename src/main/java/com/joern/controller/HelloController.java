@@ -3,6 +3,8 @@ package com.joern.controller;
 
 import com.joern.model.User;
 import com.joern.persistence.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,12 +18,16 @@ import java.util.Random;
 @Controller
 public class HelloController {
 
+	private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
+
 	@Autowired
 	private UserRepository userRepository;
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String printWelcome(ModelMap modelMap) {
+
+	    logger.debug("printWelcome()");
 
 	    modelMap.addAttribute("message", "Spring 3 MVC Hello World");
 	    modelMap.addAttribute("userList", userRepository.findAll());
@@ -32,6 +38,8 @@ public class HelloController {
 
     @RequestMapping(value = "/hello/{name:.+}", method = RequestMethod.GET)
     public ModelAndView hello(@PathVariable("name") String name) {
+
+	    logger.debug("hello()");
 
 	    User newUser = User.newUser();
 
